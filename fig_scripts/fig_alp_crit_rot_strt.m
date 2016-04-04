@@ -33,8 +33,14 @@ xfac     = 1/180;
 rot_vec  = xfac*rot_vec;
 %%
 [ax,hh{1},hh{2}]  = plotyy(rot_vec,alpc_vec,rot_vec,fmin_vec);
-lc                = {[0 0 0],[1 0 0]};
-ls                = {'-'.'--'}
+
+if BW==0
+   lc = {[0 0 0],[1 0 0]};
+else
+   lc = {[0 0 0],.35*[1 1 1]};
+end
+ls = {'-','--'};
+lw = {1,1.5};
 if 0
    yl = {'ac','Del'};
 else
@@ -65,7 +71,7 @@ for j=1:2
    %set(,'fontname','times','fontsize',16);
    %set(ax(j),'FontName','times','fontsize',16,...
       %'xlabel','theta, deg','ylabel',yl{j});
-   set(hh{j},'color',lc{j},'linestyle',ls{j});
+   set(hh{j},'color',lc{j},'linestyle',ls{j},'linewidth',lw{j});
    %%
    %set(xl,'FontName','times','fontsize',16);
 end

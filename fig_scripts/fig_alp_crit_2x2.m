@@ -1,8 +1,13 @@
 %% fig_alp_crit_2x2.m
 
 %%
-nrows = 1;
-figname  = 'out/alp_crit_2x2.eps'
+nrows = 1;%%no of subplot rows in figure
+BW    = 0;%%black and white or color
+if BW==0
+   figname  = 'out/alp_crit_2x2.eps'
+else
+   figname  = 'out/alp_crit_2x2_BW.eps'
+end
 
 if nrows==2
    filename = 'out/alp_crit_combo2.mat'
@@ -130,6 +135,10 @@ else
    set(yyl2,'position',ylp2+[.75e-1 0 0]);
 end
 %%
-saveas(gcf,figname,'epsc');
-!gv out/alp_crit_2x2.eps &
+if 1%%BW==0%%colour NB works better for BW version too
+   saveas(gcf,figname,'epsc');
+else
+   saveas(gcf,figname);
+end
+eval(['!gv ',figname,' &']);
 return;
