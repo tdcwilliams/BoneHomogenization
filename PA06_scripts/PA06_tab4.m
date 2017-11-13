@@ -2,6 +2,11 @@
 %% - effect of moving position of 1 out of 4 fibres:
 clear;
 
+outdir   = 'outPA06'
+if ~exist(outdir,'dir')
+   mkdir(outdir);
+end
+
 METHOD   = 3
 if METHOD==1%%MP
    basedir  = 'outPA06/MPfib_datfiles/';
@@ -9,6 +14,9 @@ elseif METHOD==2%%GF
    basedir  = 'outPA06/GFfib_datfiles/';
 elseif METHOD==3%%MPG
    basedir  = 'outPA06/MPGfib_datfiles/';
+end
+if ~exist(baseir,'dir')
+   mkdir(baseir);
 end
 
 Nvec  = [1 3 5 7 11 13 15];

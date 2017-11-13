@@ -1,7 +1,14 @@
 %% table2_WA06.m
 %% - effect of changing contrast of fibres:
 
+outdir   = 'outPA06'
+if ~exist(outdir,'dir')
+   mkdir(outdir);
+end
 basedir  = 'outPA06/MPfib_datfiles/';
+if ~exist(baseir,'dir')
+   mkdir(baseir);
+end
 
 mvec     = [6 20 120 400];% 49 51];
 rvec     = [.356825,.418414,.472035,.4886025];

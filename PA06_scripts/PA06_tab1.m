@@ -2,7 +2,14 @@
 %% - effect of changing radii of fibres:
 clear;
 
+outdir   = 'outPA06'
+if ~exist(outdir,'dir')
+   mkdir(outdir);
+end
 basedir  = 'outPA06/MPfib_datfiles/';
+if ~exist(baseir,'dir')
+   mkdir(baseir);
+end
 
 Nvec  = [1 3 5 11 19];% 49 51];
 rvec  = [.05 .1 .15 .2 .25 .3 .35 .4 .45 .495];

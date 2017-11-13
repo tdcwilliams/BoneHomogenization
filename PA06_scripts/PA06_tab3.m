@@ -2,7 +2,14 @@
 %% - effect of having 2 different fibres:
 clear;
 
+outdir   = 'outPA06'
+if ~exist(outdir,'dir')
+   mkdir(outdir);
+end
 basedir  = 'outPA06/MPfib_datfiles/';
+if ~exist(baseir,'dir')
+   mkdir(baseir);
+end
 
 Nvec  = [1 3 5 7 9 13];
 rvec  = [.1 .2 .3 .4 .45 .495];
