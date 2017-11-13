@@ -2,4 +2,7 @@ Matlab code for the paper:
 T. D. Williams and W. J. Parnell. Effective antiplane properties of an orthotropic solid weakened by a periodic distribution of cracks. Q. J. Mech. Appl.
 Math., 67(2):311-342, 2014.
 
-TODO add files the code depends on; change paths.m so that it paths will be relative to local directory
+Needs an additional repository:
+1) git clone https://github.com/tdcwilliams/MatlabLibrary.git
+2) in .bash_profile add
+export MATLIBDIR=[path to the above repo]

@@ -9,6 +9,7 @@ end
 matlibdir   = [matlibdir,'/'];
 
 addpath([matlibdir,'BES_progs/'   ])
+addpath([matlibdir,'GRN_progs/'   ])
 addpath([matlibdir,'CURVE_progs/' ])
 addpath([matlibdir,'GEN_progs/'   ])
 addpath([matlibdir,'OP_progs/'    ])
