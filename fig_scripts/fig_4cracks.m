@@ -11,7 +11,11 @@
 %% ?? expect m_y to be less reduced ??
 
 clear;
-filename = 'out/crack_4cracks';
+outdir   = 'out'
+if ~exist(outdir,'dir')
+   mkdir(outdir);
+end
+filename = [outdir,'/crack_4cracks'];
 DO2      = 1;
 
 if exist([filename,'.mat'])

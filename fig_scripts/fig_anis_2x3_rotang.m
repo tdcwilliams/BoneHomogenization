@@ -4,6 +4,11 @@
 %% - check effect of orthotropic host medium;
 
 clear;
+outdir   = 'out'
+if ~exist(outdir,'dir')
+   mkdir(outdir);
+end
+
 filename0   = 'out/anis_vs_rotang';
 filename1   = 'out/anis_vs_phase';
 filename    = 'out/anis_2x3_rotang';

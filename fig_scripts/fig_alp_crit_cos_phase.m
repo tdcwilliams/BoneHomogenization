@@ -1,5 +1,9 @@
 %%fig_alp_crit_rot_strt.m
-fname = 'out/alp_crit_cos_phase.mat';
+outdir   = 'out'
+if ~exist(outdir,'dir')
+   mkdir(outdir);
+end
+fname = [outdir,'/alp_crit_cos_phase.mat'];
 if exist(fname)
    load(fname);
 else

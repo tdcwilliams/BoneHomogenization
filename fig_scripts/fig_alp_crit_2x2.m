@@ -1,20 +1,24 @@
 %% fig_alp_crit_2x2.m
+outdir   = 'out'
+if ~exist(outdir,'dir')
+   mkdir(outdir);
+end
 
 %%
 nrows = 1;%%no of subplot rows in figure
 BW    = 0;%%black and white or color
 if BW==0
-   figname  = 'out/alp_crit_2x2.eps'
+   figname  = [outdir,'/alp_crit_2x2.eps']
 else
-   figname  = 'out/alp_crit_2x2_BW.eps'
+   figname  = [outdir,'/alp_crit_2x2_BW.eps']
 end
 
 if nrows==2
-   filename = 'out/alp_crit_combo2.mat'
+   filename = [outdir,'/alp_crit_combo2.mat']
    boB_vec  = [0.1000,.2,0.2000,0.3000,...
                0.4000,0.6000,0.8000,...
                .85,.9,.95,.99,1];
-   %figname  = 'out/alp_crit_combo.eps'
+   %figname  = [outdir,'/alp_crit_combo.eps']
    JJ       = [1,7:8,10:13];
    %%
    load(filename);
@@ -26,7 +30,7 @@ if nrows==2
    boB_vec([2 4:6]-1)
    nb       = length(boB_vec);
    %%
-   fname    = 'out/alp_crit_final.mat'
+   fname    = [outdir,'/alp_crit_final.mat']
       %return
 
    if 1

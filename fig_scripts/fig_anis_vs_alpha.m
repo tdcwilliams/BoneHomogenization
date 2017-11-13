@@ -4,6 +4,10 @@
 %% - check effect of orthotropic host medium;
 
 clear;
+outdir   = 'out'
+if ~exist(outdir,'dir')
+   mkdir(outdir);
+end
 filename = 'out/anis_vs_alpha';
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

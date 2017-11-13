@@ -1,5 +1,11 @@
 function fig_alp_crit(j0)
 
+outdir   = 'out'
+if ~exist(outdir,'dir')
+   mkdir(outdir);
+end
+
+filename = [outdir,'/crack_2cracks'];
 na       = 40;
 aoA_vec  = linspace(.05,.95,na)';
 DO_MORE  = 0;
@@ -14,30 +20,30 @@ end
 %%
 if 0
    boB_vec  = [.1 .2 .3];
-   filename = 'out/alp_crit_strt.mat'
+   filename = [outdir,'/alp_crit_strt.mat']
 elseif 0
    boB_vec  = [.2 .4 .6 .8];
-   filename = 'out/alp_crit_all.mat'
+   filename = [outdir,'/alp_crit_all.mat']
 elseif 0
    boB_vec  = .99;
-   filename = 'out/alp_crit_lims.mat'
-   figname  = 'out/alp_crit_lims.eps'
+   filename = [outdir,'/alp_crit_lims.mat']
+   figname  = [outdir,'/alp_crit_lims.eps']
 elseif 0
    boB_vec  = 1;
-   filename = 'out/alp_crit_lims2.mat'
+   filename = [outdir,'/alp_crit_lims2.mat']
 elseif 0
    boB_vec  = [.85 .9 .95]
-   filename = 'out/alp_crit_fill.mat'
+   filename = [outdir,'/alp_crit_fill.mat']
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 else%%combine all
    tmp1  = [];%%boB
    tmp2  = [];%%alp_crit
    if 0
-      fname = {'out/alp_crit_strt.mat',...
-               'out/alp_crit_all.mat',...
-               'out/alp_crit_lims.mat',...
-               'out/alp_crit_lims2.mat',...
-               'out/alp_crit_combo.mat'};
+      fname = {[outdir,'/alp_crit_strt.mat'],...
+               [outdir,'/alp_crit_all.mat'],...
+               [outdir,'/alp_crit_lims.mat'],...
+               [outdir,'/alp_crit_lims2.mat'],...
+               [outdir,'/alp_crit_combo.mat']};
       for r=1:4
          load(fname{r});
          tmp1  = [tmp1,boB_vec];
@@ -50,9 +56,9 @@ else%%combine all
       filename = fname{5}
       boB_vec
    elseif 0
-      fname = {'out/alp_crit_combo.mat',...
-               'out/alp_crit_fill.mat',...
-               'out/alp_crit_combo2.mat'};
+      fname = {[outdir,'/alp_crit_combo.mat'],...
+               [outdir,'/alp_crit_fill.mat'],...
+               [outdir,'/alp_crit_combo2.mat']};
       for r=1:2
          load(fname{r});
          tmp1  = [tmp1,boB_vec];
@@ -67,19 +73,19 @@ else%%combine all
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    else
       if 0
-         filename = 'out/alp_crit_combo.mat'
+         filename = [outdir,'/alp_crit_combo.mat']
          boB_vec  = [0.1000,0.2000,0.3000,...
                      0.4000,0.6000,0.8000,.99,1]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
       else
-         filename = 'out/alp_crit_combo2.mat'
+         filename = [outdir,'/alp_crit_combo2.mat']
          boB_vec  = [0.1000,0.2000,0.3000,...
                      0.4000,0.6000,0.8000,...
                      .85,.9,.95,.99,1]
       end
    end
-   %figname  = 'out/alp_crit_combo.eps'
-   figname  = 'out/alp_crit_combo2.eps'
+   %figname  = [outdir,'/alp_crit_combo.eps']
+   figname  = [outdir,'/alp_crit_combo2.eps']
    %return
 end
 nb       = length(boB_vec);

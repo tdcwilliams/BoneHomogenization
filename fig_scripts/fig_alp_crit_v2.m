@@ -1,6 +1,11 @@
 function fig_alp_crit_v2(j0)
 
 %%
+outdir   = 'out'
+if ~exist(outdir,'dir')
+   mkdir(outdir);
+end
+
 filename = 'out/alp_crit_combo2.mat'
 boB_vec  = [0.1000,.2,0.2000,0.3000,...
             0.4000,0.6000,0.8000,...

@@ -1,5 +1,10 @@
 function fig_alp_crit_rot_phase(j0)
 
+outdir   = 'out'
+if ~exist(outdir,'dir')
+   mkdir(outdir);
+end
+
 na       = 40;
 aoA_vec  = linspace(.05,.95,na)';
 DO_MORE  = 0;
